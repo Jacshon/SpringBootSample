@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test??useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: weijiang
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
