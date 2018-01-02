@@ -17,6 +17,7 @@ public class URL {
     public static final String USER_SAVE="saveUser";
     public static final String USER_DETAIL="getUserDetail/{id}";
 
+
     public static final String AUTH_ACTIVE_SEARCH="searchAuthActive";
     public static final String AUTH_ACTIVE_SAVE="saveAuthActive";
     public static final String AUTH_ACTIVE_DETAILS="getAuthActiveDetails";
