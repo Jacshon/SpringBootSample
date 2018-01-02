@@ -22,7 +22,12 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void userSave(User user) {
-        userDao.save(user);
+        try {
+            userDao.save(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
