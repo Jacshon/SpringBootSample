@@ -29,13 +29,9 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = URL.USER_DETAIL, method = RequestMethod.POST)
+    @PostMapping(value = URL.USER_DETAIL)
     public void userDetail(@RequestBody String userId) {
         userService.getUserDetails(userId);
     }
 
-    @RequestMapping(value = URL.USER_DETAIL, method = RequestMethod.DELETE)
-    public void userDelete(String userId) {
-        userService.userDelete(userId);
-    }
 }

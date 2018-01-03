@@ -10,6 +10,6 @@ public class ExceptionHandle {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public String handle(Exception e) {
-        return "";
+        return e.getMessage();
     }
 }
