@@ -1,13 +1,10 @@
 package com.wwj.server.administration.domain;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Component
 @Entity(name = "sys_login_log")
 public class LoginLog {
     @Id

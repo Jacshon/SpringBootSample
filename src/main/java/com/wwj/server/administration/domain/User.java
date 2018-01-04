@@ -1,12 +1,9 @@
 package com.wwj.server.administration.domain;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
-@Component
 @Entity(name = "sys_user")
 public class User{
     @Id

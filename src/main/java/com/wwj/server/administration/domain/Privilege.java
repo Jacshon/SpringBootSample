@@ -1,23 +1,14 @@
 package com.wwj.server.administration.domain;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
-@Component
 @Entity(name = "sys_privilege")
 public class Privilege {
     @Id
     private Integer privilegeId;
-    @OneToOne
-    private AuthObject authObject;
-    @OneToOne
-    private AuthField authField;
-    @OneToOne
-    private AuthActive authActive;
+
     @Column(length = 20)
     private String createBy;
     private long createTime;
@@ -31,30 +22,6 @@ public class Privilege {
 
     public void setPrivilegeId(Integer privilegeId) {
         this.privilegeId = privilegeId;
-    }
-
-    public AuthObject getAuthObject() {
-        return authObject;
-    }
-
-    public void setAuthObject(AuthObject authObject) {
-        this.authObject = authObject;
-    }
-
-    public AuthField getAuthField() {
-        return authField;
-    }
-
-    public void setAuthField(AuthField authField) {
-        this.authField = authField;
-    }
-
-    public AuthActive getAuthActive() {
-        return authActive;
-    }
-
-    public void setAuthActive(AuthActive authActive) {
-        this.authActive = authActive;
     }
 
     public String getCreateBy() {

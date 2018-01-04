@@ -11,6 +11,7 @@ public class URL {
     public static final String MODULE_COMMON="api/web/common";
     public static final String MODULE_SYS_CODE="api/web/sysCode";
     public static final String MODULE_AUTH_ACTIVE="api/web/userActive";
+    public static final String MODULE_OPERATE="api/web/operate";
 
     /** 菜单及按钮操作定义部分 **/
     public static final String USER_SEARCH="searchUser";
@@ -22,6 +23,11 @@ public class URL {
     public static final String AUTH_ACTIVE_SAVE="saveAuthActive";
     public static final String AUTH_ACTIVE_DETAILS="getAuthActiveDetails";
     public static final String AUTH_ACTIVE_DELETE="deleteAuthActive";
+
+    public static final String OPERATE_SEARCH="searchOperate";
+    public static final String OPERATE_SAVE="saveOperate";
+    public static final String OPERATE_DETAILS="getOperateDetails";
+    public static final String OPERATE_DELETE="deleteOperate";
 
     public static final String SYS_CODE_SEARCH="searchSysCode";
     public static final String SYS_CODE_SAVE="saveSysCode";

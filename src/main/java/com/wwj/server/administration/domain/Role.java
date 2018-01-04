@@ -1,12 +1,9 @@
 package com.wwj.server.administration.domain;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "sys_role")
-@Component
 public class Role {
     @Id
     @Column(name = "role_id")
