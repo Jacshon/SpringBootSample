@@ -1,9 +1,6 @@
 package com.wwj.server.administration.domain;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "sys_menu")
@@ -12,21 +9,54 @@ public class Menu {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer menuId;
 
-    @Column(length = 8, unique = true)
-    private String code;
+    private Integer parentId;
 
-    @Column(length = 20)
-    private String createBy;
+    @Column(length = 30, unique = true)
+    private String menuName;
 
-    @Column
-    private Timestamp createDate;
+    @Column(length = 60)
+    private String menuUrl;
 
-    @Column(length = 20)
-    private String updateBy;
+    @Column(length = 4)
+    private String menuLevel;
 
-    @Column
-    private Timestamp updateDate;
+    public Integer getMenuId() {
+        return menuId;
+    }
 
-    @Column
-    private boolean status;
+    public void setMenuId(Integer menuId) {
+        this.menuId = menuId;
+    }
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
+
+    public String getMenuUrl() {
+        return menuUrl;
+    }
+
+    public void setMenuUrl(String menuUrl) {
+        this.menuUrl = menuUrl;
+    }
+
+    public String getMenuLevel() {
+        return menuLevel;
+    }
+
+    public void setMenuLevel(String menuLevel) {
+        this.menuLevel = menuLevel;
+    }
 }

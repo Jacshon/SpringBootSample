@@ -10,12 +10,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer roleId;
 
-    @Column(length = 20)
-    private String createBy;
-    private long createTime;
-    @Column(length = 20)
-    private String updateBy;
-    private long updateTime;
+    private String roleCode;
+
+    private String roleName;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "sys_role_privilege"
@@ -39,35 +36,19 @@ public class Role {
         this.privileges = privileges;
     }
 
-    public String getCreateBy() {
-        return createBy;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 
-    public long getCreateTime() {
-        return createTime;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setCreateTime(long createTime) {
-        this.createTime = createTime;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public long getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(long updateTime) {
-        this.updateTime = updateTime;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }
