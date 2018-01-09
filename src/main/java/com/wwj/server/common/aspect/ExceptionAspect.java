@@ -1,6 +1,6 @@
 package com.wwj.server.common.aspect;
 
-import com.wwj.server.common.exception.ControllerException;
+import com.wwj.server.common.exception.CustomerException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.*;
@@ -14,30 +14,27 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-public class TryCatchAspect {
+public class ExceptionAspect {
 
-    private Logger logger = LoggerFactory.getLogger(TryCatchAspect.class);
+    private Logger logger = LoggerFactory.getLogger(ExceptionAspect.class);
 
-    @Pointcut("execution(public * com.wwj.server.*.controller.*.*(..))")
+    @Pointcut("execution(public * com.wwj.server.*.service.*.*(..))")
     public void controllerPointCut() {
 
     }
 
     @Around("controllerPointCut()")
     public void controllerTryCatch(ProceedingJoinPoint pjp) {
-        Signature signature = pjp.getSignature();
         try {
             pjp.proceed();
         } catch (Throwable e) {
-            if (e instanceof ControllerException) {
-                logger.error(signature.toString());
-                throw new ControllerException(1,"Controller layer Error");
-            } else if(e instanceof RuntimeException) {
-
+            if (e instanceof CustomerException) {
+                logger.error(e.getMessage());
+                CustomerException ce = (CustomerException) e;
+                throw new CustomerException(ce.getCode(), ce.getMessage());
             } else {
-
+                throw new RuntimeException(e);
             }
         }
     }
-
 }

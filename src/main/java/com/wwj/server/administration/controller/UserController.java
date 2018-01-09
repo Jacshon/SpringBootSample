@@ -2,7 +2,6 @@ package com.wwj.server.administration.controller;
 
 import com.wwj.server.administration.domain.User;
 import com.wwj.server.administration.service.UserService;
-import com.wwj.server.common.exception.ControllerException;
 import com.wwj.server.shared.URL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +25,8 @@ public class UserController {
     }
 
     @RequestMapping(value = URL.USER_SAVE, method = RequestMethod.POST)
-    public void userSave(@RequestBody User user) {
-        userService.userSave(user);
+    public User userSave(@RequestBody User user) {
+        return userService.userSave(user);
     }
 
     @PostMapping(value = URL.USER_DETAIL)

@@ -1,7 +1,7 @@
 package com.wwj.server.common.aspect;
 
-import com.wwj.server.administration.dao.LoginLogDao;
 import com.wwj.server.administration.domain.LoginLog;
+import com.wwj.server.administration.service.LoginLogService;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 
 @Aspect
 @Component
-public class HttpAspect {
-    Logger logger = LoggerFactory.getLogger(HttpAspect.class);
+public class LoginAspect {
+
+    private static Logger logger = LoggerFactory.getLogger(LoginAspect.class);
 
     @Autowired
-    LoginLogDao loginLogDao;
+    private LoginLogService loginLogService;
 
     @Pointcut("execution(public * com.wwj.server.*.controller.*.*(..))")
     public void log(){
@@ -27,7 +28,7 @@ public class HttpAspect {
 
     @Before(value = "log()")
     public void before(){
-        ServletRequestAttributes  attributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         logger.info("before");
         LoginLog loginLog = new LoginLog();
@@ -35,7 +36,7 @@ public class HttpAspect {
         loginLog.setLoginTime(System.currentTimeMillis());
         loginLog.setLoginIp(request.getRemoteAddr());
         loginLog.setLoginType("pc");
-        loginLogDao.save(loginLog);
+        loginLogService.saveLoginLog(loginLog);
     }
 
     @After(value = "log()")
