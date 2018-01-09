@@ -7,6 +7,9 @@ public class Response {
     private String message;
     private Object data;
 
+    public Response() {
+    }
+
     public Response(Integer code, String message, Object data) {
         this.code = code;
         this.message = message;
@@ -44,10 +47,24 @@ public class Response {
     }
 
     public static Response ok() {
-        return new Response(StatusCode.SUCCESS);
+        return ok(null);
+    }
+
+    public static Response ok(Object object) {
+        Response response = new Response(StatusCode.SUCCESS);
+        response.setData(object);
+        return response;
     }
 
     public static Response error() {
         return new Response(StatusCode.ERROR);
     }
+
+    public static Response error(Integer code, String message) {
+        Response response = new Response(StatusCode.ERROR);
+        response.setCode(code);
+        response.setMessage(message);
+        return response;
+    }
+
 }

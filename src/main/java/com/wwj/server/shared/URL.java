@@ -16,7 +16,7 @@ public class URL {
     /** 菜单及按钮操作定义部分 **/
     public static final String USER_SEARCH="searchUser";
     public static final String USER_SAVE="saveUser";
-    public static final String USER_DETAIL="getUserDetail/{id}";
+    public static final String USER_DETAIL="getUserDetail/{userId}";
 
 
     public static final String AUTH_ACTIVE_SEARCH="searchAuthActive";
