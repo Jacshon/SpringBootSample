@@ -11,7 +11,7 @@ public interface UserService {
 
     public User userSave(User user);
 
-    public User getUserDetails(String userId) throws Exception;
+    public User getUserDetails(String userId) ;
 
     public void userDelete(String userId);
 

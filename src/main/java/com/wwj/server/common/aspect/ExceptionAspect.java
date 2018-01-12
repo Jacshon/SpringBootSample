@@ -24,17 +24,11 @@ public class ExceptionAspect {
     }
 
     @Around("controllerPointCut()")
-    public void controllerTryCatch(ProceedingJoinPoint pjp) {
+    public void controllerException(ProceedingJoinPoint pjp) {
         try {
             pjp.proceed();
         } catch (Throwable e) {
-            if (e instanceof CustomerException) {
-                logger.error(e.getMessage());
-                CustomerException ce = (CustomerException) e;
-                throw new CustomerException(ce.getCode(), ce.getMessage());
-            } else {
-                throw new RuntimeException(e);
-            }
+            e.printStackTrace();
         }
     }
 }
