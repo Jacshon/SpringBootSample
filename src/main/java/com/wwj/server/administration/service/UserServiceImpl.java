@@ -6,10 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
     private static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -25,13 +26,11 @@ public class UserServiceImpl implements UserService {
 //    @Transactional
     @Override
     public User userSave(User user) {
-        user = userDao.save(user);
-        return user;
+        return userDao.save(user);
     }
 
     @Override
     public User getUserDetails(String userId) {
-        if (1==1) throw new NullPointerException();
         return userDao.getOne(userId);
     }
 

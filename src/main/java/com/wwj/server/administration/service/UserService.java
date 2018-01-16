@@ -1,7 +1,5 @@
 package com.wwj.server.administration.service;
 
-import com.wwj.server.administration.domain.LoginLog;
-import com.wwj.server.administration.domain.Role;
 import com.wwj.server.administration.domain.User;
 
 import java.util.List;

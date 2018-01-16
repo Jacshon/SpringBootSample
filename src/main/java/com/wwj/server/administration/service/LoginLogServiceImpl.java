@@ -3,11 +3,11 @@ package com.wwj.server.administration.service;
 import com.wwj.server.administration.dao.LoginLogDao;
 import com.wwj.server.administration.domain.LoginLog;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class LoginLogServiceImpl implements LoginLogService {
     @Autowired
     private LoginLogDao loginLogDao;

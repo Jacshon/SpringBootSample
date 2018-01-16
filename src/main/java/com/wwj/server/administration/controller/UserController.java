@@ -20,9 +20,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = URL.USER_SEARCH, method = RequestMethod.GET)
+    @RequestMapping(value = URL.USER_SEARCH, method = RequestMethod.POST)
     public Response userlist() {
-        List<User> userList = userService.userList();
         return Response.ok(userService.userList());
     }
 

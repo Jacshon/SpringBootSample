@@ -13,10 +13,14 @@ public class URL {
     public static final String MODULE_AUTH_ACTIVE="api/web/userActive";
     public static final String MODULE_OPERATE="api/web/operate";
 
+    /** **/
+    public static final String CHANGE_LOCALE="changeLocale";
+
     /** 菜单及按钮操作定义部分 **/
-    public static final String USER_SEARCH="searchUser";
+    public static final String USER_SEARCH="searchUsers";
     public static final String USER_SAVE="saveUser";
     public static final String USER_DETAIL="getUserDetail/{userId}";
+    public static final String USER_DELETE="deleteUser/{userId}";
 
 
     public static final String AUTH_ACTIVE_SEARCH="searchAuthActive";

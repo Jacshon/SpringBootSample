@@ -20,8 +20,8 @@ public class ExceptionHandle {
             CustomerException ce = (CustomerException) e;
             return Response.error(ce.getCode(), ce.getMessage());
         } else {
-            logger.error("【系统错误】 {}", e);
-            return Response.error(-1,"未知错误");
+            logger.error("Systerm Error {}", e);
+            return Response.error(-1,"Unknow Error");
         }
     }
 }
