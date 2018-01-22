@@ -7,11 +7,11 @@ public class URL {
 
     /** 模块定义部分 **/
     public static final String MODULE_SYSTEM="api/web/system";
-    public static final String MODULE_USER="api/web/user";
+    public static final String MODULE_SYS_USER="api/web/user";
     public static final String MODULE_COMMON="api/web/common";
     public static final String MODULE_SYS_CODE="api/web/sysCode";
-    public static final String MODULE_AUTH_ACTIVE="api/web/userActive";
-    public static final String MODULE_OPERATE="api/web/operate";
+    public static final String MODULE_SYS_OPERATE="api/web/operate";
+    public static final String MODULE_SYS_MENU="api/web/menu";
 
     /** **/
     public static final String CHANGE_LOCALE="changeLocale";
@@ -28,10 +28,15 @@ public class URL {
     public static final String AUTH_ACTIVE_DETAILS="getAuthActiveDetails";
     public static final String AUTH_ACTIVE_DELETE="deleteAuthActive";
 
-    public static final String OPERATE_SEARCH="searchOperate";
-    public static final String OPERATE_SAVE="saveOperate";
-    public static final String OPERATE_DETAILS="getOperateDetails";
-    public static final String OPERATE_DELETE="deleteOperate";
+    public static final String SYS_OPERATE_SEARCH="searchOperate";
+    public static final String SYS_OPERATE_SAVE="saveOperate";
+    public static final String SYS_OPERATE_DETAILS="getOperateDetails";
+    public static final String SYS_OPERATE_DELETE="deleteOperate";
+
+    public static final String SYS_MENU_SEARCH_ALL="sysMenuSearchAll";
+    public static final String SYS_MENU_SAVE="sysMenuSave";
+    public static final String SYS_MENU_DETAILS="sysMenuDetails";
+    public static final String SYS_MENU_DELETE="sysMenuDelete";
 
     public static final String SYS_CODE_SEARCH="searchSysCode";
     public static final String SYS_CODE_SAVE="saveSysCode";

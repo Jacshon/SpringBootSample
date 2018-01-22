@@ -16,7 +16,7 @@ public class OperateController {
     @Autowired
     private OperateDao operateDao;
 
-    @PostMapping(value = URL.OPERATE_SAVE)
+    @PostMapping(value = URL.SYS_OPERATE_SAVE)
     public Operate saveOperateController(@RequestBody Operate operate) {
         return operateDao.save(operate);
     }

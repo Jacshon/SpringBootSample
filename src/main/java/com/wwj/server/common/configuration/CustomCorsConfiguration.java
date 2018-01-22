@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
+ * 该文件为跨域请求访问设置
  * Author: WWJ
  * Date: 2018/1/16 14:07
  */

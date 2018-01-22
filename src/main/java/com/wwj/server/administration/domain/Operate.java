@@ -9,6 +9,7 @@ public class Operate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer operateId;
 
+    // 码值说明:查询=0001，修改=0010，删除=0100，新增=1000
     @Column(length = 4)
     private String operateCode;
 
