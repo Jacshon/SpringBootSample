@@ -12,15 +12,16 @@ public class URL {
     public static final String MODULE_SYS_CODE="api/web/sysCode";
     public static final String MODULE_SYS_OPERATE="api/web/operate";
     public static final String MODULE_SYS_MENU="api/web/menu";
+    public static final String MODULE_SYS_ROLE="api/web/role";
 
     /** **/
     public static final String CHANGE_LOCALE="changeLocale";
 
     /** 菜单及按钮操作定义部分 **/
-    public static final String USER_SEARCH="searchUsers";
-    public static final String USER_SAVE="saveUser";
-    public static final String USER_DETAIL="getUserDetail/{userId}";
-    public static final String USER_DELETE="deleteUser/{userId}";
+    public static final String SYS_USER_SEARCH="searchUsers";
+    public static final String SYS_USER_SAVE="saveUser";
+    public static final String SYS_USER_DETAIL="getUserDetail/{userId}";
+    public static final String SYS_USER_DELETE="deleteUser/{userId}";
 
 
     public static final String AUTH_ACTIVE_SEARCH="searchAuthActive";
@@ -33,10 +34,10 @@ public class URL {
     public static final String SYS_OPERATE_DETAILS="getOperateDetails";
     public static final String SYS_OPERATE_DELETE="deleteOperate";
 
-    public static final String SYS_MENU_SEARCH_ALL="sysMenuSearchAll";
-    public static final String SYS_MENU_SAVE="sysMenuSave";
-    public static final String SYS_MENU_DETAILS="sysMenuDetails";
-    public static final String SYS_MENU_DELETE="sysMenuDelete";
+    public static final String SYS_MENU_SEARCH_ALL="searchSysMenu";
+    public static final String SYS_MENU_SAVE="saveSysMenu";
+    public static final String SYS_MENU_DETAILS="getSysMenuDetails";
+    public static final String SYS_MENU_DELETE="deleteSysMenu";
 
     public static final String SYS_CODE_SEARCH="searchSysCode";
     public static final String SYS_CODE_SAVE="saveSysCode";

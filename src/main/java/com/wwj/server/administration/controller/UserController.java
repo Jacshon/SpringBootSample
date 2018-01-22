@@ -18,17 +18,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = URL.USER_SEARCH, method = RequestMethod.POST)
+    @RequestMapping(value = URL.SYS_USER_SEARCH, method = RequestMethod.POST)
     public Response userlist() {
         return Response.ok(userService.userList());
     }
 
-    @RequestMapping(value = URL.USER_SAVE, method = RequestMethod.POST)
+    @RequestMapping(value = URL.SYS_USER_SAVE, method = RequestMethod.POST)
     public Response userSave(@RequestBody User user) {
         return Response.ok(userService.userSave(user));
     }
 
-    @PostMapping(value = URL.USER_DETAIL)
+    @PostMapping(value = URL.SYS_USER_DETAIL)
     public Response userDetail(@PathVariable("userId") String userId) throws Exception{
         return Response.ok(userService.getUserDetails(userId));
     }
