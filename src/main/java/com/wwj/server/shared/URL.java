@@ -23,12 +23,6 @@ public class URL {
     public static final String SYS_USER_DETAIL="getUserDetail/{userId}";
     public static final String SYS_USER_DELETE="deleteUser/{userId}";
 
-
-    public static final String AUTH_ACTIVE_SEARCH="searchAuthActive";
-    public static final String AUTH_ACTIVE_SAVE="saveAuthActive";
-    public static final String AUTH_ACTIVE_DETAILS="getAuthActiveDetails";
-    public static final String AUTH_ACTIVE_DELETE="deleteAuthActive";
-
     public static final String SYS_OPERATE_SEARCH="searchOperate";
     public static final String SYS_OPERATE_SAVE="saveOperate";
     public static final String SYS_OPERATE_DETAILS="getOperateDetails";
@@ -36,8 +30,8 @@ public class URL {
 
     public static final String SYS_MENU_SEARCH_ALL="searchSysMenu";
     public static final String SYS_MENU_SAVE="saveSysMenu";
-    public static final String SYS_MENU_DETAILS="getSysMenuDetails";
-    public static final String SYS_MENU_DELETE="deleteSysMenu";
+    public static final String SYS_MENU_DETAILS="getSysMenuDetails/{menuId}";
+    public static final String SYS_MENU_DELETE="deleteSysMenu/{menuId}";
 
     public static final String SYS_CODE_SEARCH="searchSysCode";
     public static final String SYS_CODE_SAVE="saveSysCode";

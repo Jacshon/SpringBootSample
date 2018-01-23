@@ -7,8 +7,6 @@ import com.wwj.server.shared.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(URL.MODULE_SYS_MENU)
 public class MenuController {
@@ -24,5 +22,16 @@ public class MenuController {
     @PostMapping(URL.SYS_MENU_SAVE)
     public Response saveMenu(@RequestBody Menu menu) {
         return new Response().ok(menuService.saveMenu(menu));
+    }
+
+    @PostMapping(URL.SYS_MENU_DELETE)
+    public Response deleteMenu(@PathVariable Integer menuId) {
+        menuService.deleteMenuById(menuId);
+        return new Response().ok();
+    }
+
+    @GetMapping(URL.SYS_MENU_DETAILS)
+    public Response getMenuDetails(@PathVariable Integer menuId) {
+        return new Response().ok(menuService.getMenuById(menuId));
     }
 }
