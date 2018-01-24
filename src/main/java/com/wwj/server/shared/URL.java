@@ -23,6 +23,11 @@ public class URL {
     public static final String SYS_USER_DETAIL="getUserDetail/{userId}";
     public static final String SYS_USER_DELETE="deleteUser/{userId}";
 
+    public static final String SYS_ROLE_SEARCH="searchRoles";
+    public static final String SYS_ROLE_SAVE="saveRole";
+    public static final String SYS_ROLE_DETAIL="getRoleDetail/{roleId}";
+    public static final String SYS_ROLE_DELETE="deleteRole/{roleId}";
+
     public static final String SYS_OPERATE_SEARCH="searchOperate";
     public static final String SYS_OPERATE_SAVE="saveOperate";
     public static final String SYS_OPERATE_DETAILS="getOperateDetails";

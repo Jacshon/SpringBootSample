@@ -2,8 +2,10 @@ package com.wwj.server.administration.controller;
 
 import com.wwj.server.administration.domain.Role;
 import com.wwj.server.administration.service.RoleService;
+import com.wwj.server.common.domain.Response;
 import com.wwj.server.shared.URL;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +19,8 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @RequestMapping(value = "/roleList", method = RequestMethod.GET)
-    public List<Role> roleList() {
-        List<Role> roles = roleService.roleList();
-        return roles;
+    @GetMapping(URL.SYS_ROLE_SEARCH)
+    public Response roleList() {
+        return new Response().ok(roleService.roleList());
     }
 }
