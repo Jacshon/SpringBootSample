@@ -1,6 +1,6 @@
 package com.wwj.server.common.aspect;
 
-import com.wwj.server.administration.domain.LoginLog;
+import com.wwj.server.administration.domain.SysLoginLog;
 import com.wwj.server.administration.service.LoginLogService;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
@@ -31,12 +31,12 @@ public class LoginAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         logger.info("before");
-        LoginLog loginLog = new LoginLog();
-        loginLog.setLoginId("test");
-        loginLog.setLoginTime(System.currentTimeMillis());
-        loginLog.setLoginIp(request.getRemoteAddr());
-        loginLog.setLoginType("pc");
-        loginLogService.saveLoginLog(loginLog);
+        SysLoginLog sysLoginLog = new SysLoginLog();
+        sysLoginLog.setLoginId("test");
+        sysLoginLog.setLoginTime(System.currentTimeMillis());
+        sysLoginLog.setLoginIp(request.getRemoteAddr());
+        sysLoginLog.setLoginType("pc");
+        loginLogService.saveLoginLog(sysLoginLog);
     }
 
     @After(value = "log()")

@@ -1,7 +1,7 @@
 package com.wwj.server.administration.controller;
 
 import com.wwj.server.administration.dao.OperateDao;
-import com.wwj.server.administration.domain.Operate;
+import com.wwj.server.administration.domain.SysOperate;
 import com.wwj.server.shared.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ public class OperateController {
     private OperateDao operateDao;
 
     @PostMapping(value = URL.SYS_OPERATE_SAVE)
-    public Operate saveOperateController(@RequestBody Operate operate) {
-        return operateDao.save(operate);
+    public SysOperate saveOperateController(@RequestBody SysOperate sysOperate) {
+        return operateDao.save(sysOperate);
     }
 }

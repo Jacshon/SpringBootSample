@@ -4,11 +4,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "sys_role")
-public class Role {
+public class SysRole {
     @Id
-    @Column(name = "role_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer roleId;
+    @Column(length = 32)
+    private String roleId;
 
     private String roleCode;
 
@@ -18,22 +17,14 @@ public class Role {
     @JoinTable(name = "sys_role_privilege"
             ,joinColumns = {@JoinColumn(name = "role_id")}
             ,inverseJoinColumns = {@JoinColumn(name = "privilege_id")})
-    private List<Privilege> privileges;
+    private List<SysPrivilege> sysPrivileges;
 
-    public Integer getRoleId() {
-        return roleId;
+    public List<SysPrivilege> getSysPrivileges() {
+        return sysPrivileges;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public List<Privilege> getPrivileges() {
-        return privileges;
-    }
-
-    public void setPrivileges(List<Privilege> privileges) {
-        this.privileges = privileges;
+    public void setSysPrivileges(List<SysPrivilege> sysPrivileges) {
+        this.sysPrivileges = sysPrivileges;
     }
 
     public String getRoleCode() {
@@ -50,5 +41,13 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 }

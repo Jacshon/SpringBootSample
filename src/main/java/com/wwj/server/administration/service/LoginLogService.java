@@ -1,12 +1,12 @@
 package com.wwj.server.administration.service;
 
-import com.wwj.server.administration.domain.LoginLog;
+import com.wwj.server.administration.domain.SysLoginLog;
 
 import java.util.List;
 
 public interface LoginLogService {
 
-    public LoginLog saveLoginLog(LoginLog loginLog);
-    public List<LoginLog> searchLoginLog();
+    public SysLoginLog saveLoginLog(SysLoginLog sysLoginLog);
+    public List<SysLoginLog> searchLoginLog();
 
 }

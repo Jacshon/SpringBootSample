@@ -2,11 +2,13 @@ package com.wwj.server.administration.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "sys_module")
-public class Module {
+public class SysModule {
+    @Id
     @Column(name = "module_id", length = 32)
     private String moduleId;
     @Column(name = "name", length = 64)
@@ -17,9 +19,7 @@ public class Module {
     private Integer priority;
     @Column(name = "status", length = 2)
     private String status;
-    @Column(name = "create_time")
     private Long createTime;
-    @Column(name = "update_time")
     private Long updateTime;
 
     public String getModuleId() {

@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity(name = "sys_user")
-public class User{
+public class SysUser {
     @Id
     @Column(name = "user_id",length = 32)
     private String userId;
@@ -27,7 +27,7 @@ public class User{
     @JoinTable(name = "sys_user_role"
             ,joinColumns = {@JoinColumn(name = "user_id")}
             ,inverseJoinColumns = {@JoinColumn(name = "role_id")})
-    private Set<Role> roles;
+    private Set<SysRole> sysRoles;
 
     public String getUserId() {
         return userId;
@@ -93,12 +93,12 @@ public class User{
         this.createTime = createTime;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public Set<SysRole> getSysRoles() {
+        return sysRoles;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setSysRoles(Set<SysRole> sysRoles) {
+        this.sysRoles = sysRoles;
     }
 
     public String getRealName() {

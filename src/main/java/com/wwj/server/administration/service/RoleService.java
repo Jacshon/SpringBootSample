@@ -1,10 +1,10 @@
 package com.wwj.server.administration.service;
 
-import com.wwj.server.administration.domain.Role;
+import com.wwj.server.administration.domain.SysRole;
 
 import java.util.List;
 
 public interface RoleService {
 
-    public List<Role> roleList();
+    public List<SysRole> roleList();
 }

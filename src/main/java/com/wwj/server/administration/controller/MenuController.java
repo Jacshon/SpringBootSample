@@ -1,6 +1,6 @@
 package com.wwj.server.administration.controller;
 
-import com.wwj.server.administration.domain.Menu;
+import com.wwj.server.administration.domain.SysMenu;
 import com.wwj.server.administration.service.MenuService;
 import com.wwj.server.common.domain.Response;
 import com.wwj.server.shared.URL;
@@ -20,8 +20,8 @@ public class MenuController {
     }
 
     @PostMapping(URL.SYS_MENU_SAVE)
-    public Response saveMenu(@RequestBody Menu menu) {
-        return new Response().ok(menuService.saveMenu(menu));
+    public Response saveMenu(@RequestBody SysMenu sysMenu) {
+        return new Response().ok(menuService.saveMenu(sysMenu));
     }
 
     @PostMapping(URL.SYS_MENU_DELETE)

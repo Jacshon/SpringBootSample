@@ -4,12 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sys_menu")
-public class Menu {
+public class SysMenu {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer menuId;
-
-    private Integer parentId;
+    @Column(length = 32)
+    private String menuId;
+    @Column(length = 32)
+    private String parentId;
 
     @Column(length = 30, unique = true)
     private String menuName;
@@ -20,19 +20,23 @@ public class Menu {
     @Column(length = 4)
     private String menuLevel;
 
-    public Integer getMenuId() {
+    private Long createTime;
+
+    private Long updateTime;
+
+    public String getMenuId() {
         return menuId;
     }
 
-    public void setMenuId(Integer menuId) {
+    public void setMenuId(String menuId) {
         this.menuId = menuId;
     }
 
-    public Integer getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
@@ -58,5 +62,21 @@ public class Menu {
 
     public void setMenuLevel(String menuLevel) {
         this.menuLevel = menuLevel;
+    }
+
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
     }
 }

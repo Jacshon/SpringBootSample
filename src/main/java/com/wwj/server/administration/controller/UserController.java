@@ -1,6 +1,6 @@
 package com.wwj.server.administration.controller;
 
-import com.wwj.server.administration.domain.User;
+import com.wwj.server.administration.domain.SysUser;
 import com.wwj.server.administration.service.UserService;
 import com.wwj.server.common.domain.Response;
 import com.wwj.server.shared.URL;
@@ -24,8 +24,8 @@ public class UserController {
     }
 
     @RequestMapping(value = URL.SYS_USER_SAVE, method = RequestMethod.POST)
-    public Response userSave(@RequestBody User user) {
-        return Response.ok(userService.userSave(user));
+    public Response userSave(@RequestBody SysUser sysUser) {
+        return Response.ok(userService.userSave(sysUser));
     }
 
     @PostMapping(value = URL.SYS_USER_DETAIL)

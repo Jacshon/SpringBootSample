@@ -1,7 +1,7 @@
 package com.wwj.server.administration.service;
 
 import com.wwj.server.administration.dao.MenuDao;
-import com.wwj.server.administration.domain.Menu;
+import com.wwj.server.administration.domain.SysMenu;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,28 +18,28 @@ public class MenuServiceImple implements MenuService {
     private MenuDao menuDao;
 
     @Override
-    public Menu getMenuById(Integer menuId) {
+    public SysMenu getMenuById(Integer menuId) {
         return menuDao.findOne(menuId);
     }
 
     @Override
-    public List<Menu> getAllMenus() {
+    public List<SysMenu> getAllMenus() {
         return menuDao.findAll();
     }
 
     @Override
-    public List<Menu> getMenusByModel(Menu menu) {
+    public List<SysMenu> getMenusByModel(SysMenu sysMenu) {
         return null;
     }
 
     @Override
-    public Menu saveMenu(Menu menu) {
-        return menuDao.saveAndFlush(menu);
+    public SysMenu saveMenu(SysMenu sysMenu) {
+        return menuDao.saveAndFlush(sysMenu);
     }
 
     @Transactional
     @Override
-    public void batchSaveMenus(List<Menu> menus) {
+    public void batchSaveMenus(List<SysMenu> sysMenus) {
     }
 
     @Override

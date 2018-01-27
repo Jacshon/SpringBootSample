@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "sys_login_log")
-public class LoginLog {
+public class SysLoginLog {
     @Id
     @GeneratedValue
     private Integer loginLogId;

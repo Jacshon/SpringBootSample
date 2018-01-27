@@ -4,10 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sys_operate")
-public class Operate {
+public class SysOperate {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer operateId;
+    @Column(length = 32)
+    private String operateId;
 
     // 码值说明:查询=0001，修改=0010，删除=0100，新增=1000
     @Column(length = 4)
@@ -16,11 +16,11 @@ public class Operate {
     @Column(length = 30)
     private String operateName;
 
-    public Integer getOperateId() {
+    public String getOperateId() {
         return operateId;
     }
 
-    public void setOperateId(Integer operateId) {
+    public void setOperateId(String operateId) {
         this.operateId = operateId;
     }
 

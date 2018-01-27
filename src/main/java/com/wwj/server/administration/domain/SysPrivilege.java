@@ -1,5 +1,6 @@
 package com.wwj.server.administration.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,10 +8,14 @@ import javax.persistence.Id;
  * 权限表是RBAC系统的核心
  */
 @Entity(name = "sys_privilege")
-public class Privilege {
+public class SysPrivilege {
     @Id
-    private Integer privilegeId;
+    @Column(length = 32)
+    private String privilegeId;
 
+    @Column(name = "privilege_pid", length = 32)
+    private String privilegePid;
+    @Column(length = 64)
     private String privilegeName;
 
     // 用于操作按钮权限验证,actionValue是操作码值的和（此处已保证和唯一，利用二进制特性)
@@ -20,15 +25,7 @@ public class Privilege {
     private int actionValue;
 
     // menuId用来控制URL访问权限
-    private Integer menuId;
-
-    public Integer getPrivilegeId() {
-        return privilegeId;
-    }
-
-    public void setPrivilegeId(Integer privilegeId) {
-        this.privilegeId = privilegeId;
-    }
+    private SysMenu sysMenu;
 
     public String getPrivilegeName() {
         return privilegeName;
@@ -46,11 +43,27 @@ public class Privilege {
         this.actionValue = actionValue;
     }
 
-    public Integer getMenuId() {
-        return menuId;
+    public String getPrivilegeId() {
+        return privilegeId;
     }
 
-    public void setMenuId(Integer menuId) {
-        this.menuId = menuId;
+    public void setPrivilegeId(String privilegeId) {
+        this.privilegeId = privilegeId;
+    }
+
+    public String getPrivilegePid() {
+        return privilegePid;
+    }
+
+    public void setPrivilegePid(String privilegePid) {
+        this.privilegePid = privilegePid;
+    }
+
+    public SysMenu getSysMenu() {
+        return sysMenu;
+    }
+
+    public void setSysMenu(SysMenu sysMenu) {
+        this.sysMenu = sysMenu;
     }
 }
