@@ -1,8 +1,7 @@
 package com.wwj.server.administration.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * 权限表是RBAC系统的核心
@@ -25,7 +24,14 @@ public class SysPrivilege {
     private int actionValue;
 
     // menuId用来控制URL访问权限
+    @OneToOne
     private SysMenu sysMenu;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "sys_privilege_group_asso"
+            ,joinColumns = {@JoinColumn(name = "privilege_id")}
+            ,inverseJoinColumns = {@JoinColumn(name = "privilege_group_id")})
+    private Set<SysPrivilegeGroup> privilegeGroupSet;
 
     public String getPrivilegeName() {
         return privilegeName;
@@ -66,4 +72,5 @@ public class SysPrivilege {
     public void setSysMenu(SysMenu sysMenu) {
         this.sysMenu = sysMenu;
     }
+
 }

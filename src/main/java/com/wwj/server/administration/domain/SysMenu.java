@@ -8,17 +8,21 @@ public class SysMenu {
     @Id
     @Column(length = 32)
     private String menuId;
-    @Column(length = 32)
-    private String parentId;
 
     @Column(length = 30, unique = true)
     private String menuName;
 
     @Column(length = 60)
-    private String menuUrl;
+    private String state;
 
-    @Column(length = 4)
-    private String menuLevel;
+    @Column(length = 40)
+    private String icon;
+
+    @Column(length = 2)
+    private String status;
+
+    @OneToOne
+    private SysModule sysModule;
 
     private Long createTime;
 
@@ -32,14 +36,6 @@ public class SysMenu {
         this.menuId = menuId;
     }
 
-    public String getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(String parentId) {
-        this.parentId = parentId;
-    }
-
     public String getMenuName() {
         return menuName;
     }
@@ -48,20 +44,12 @@ public class SysMenu {
         this.menuName = menuName;
     }
 
-    public String getMenuUrl() {
-        return menuUrl;
+    public String getState() {
+        return state;
     }
 
-    public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl;
-    }
-
-    public String getMenuLevel() {
-        return menuLevel;
-    }
-
-    public void setMenuLevel(String menuLevel) {
-        this.menuLevel = menuLevel;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public Long getCreateTime() {
@@ -78,5 +66,29 @@ public class SysMenu {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public SysModule getSysModule() {
+        return sysModule;
+    }
+
+    public void setSysModule(SysModule sysModule) {
+        this.sysModule = sysModule;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

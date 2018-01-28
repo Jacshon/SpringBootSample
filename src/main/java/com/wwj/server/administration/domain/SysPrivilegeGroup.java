@@ -3,35 +3,31 @@ package com.wwj.server.administration.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "sys_module")
-public class SysModule {
+@Entity(name = "sys_privilege_group")
+public class SysPrivilegeGroup {
+
     @Id
-    @Column(name = "module_id", length = 32)
-    private String moduleId;
-    @Column(name = "name", length = 64)
+    @Column(length = 32)
+    private String privilegeGroupId;
+    @Column(length = 64)
     private String name;
-    @Column(name = "code", length = 32)
+    @Column(length = 4)
+    private String type;
+    @Column(length = 32)
     private String code;
-    @Column(length = 60)
-    private String state;
-    @Column(length = 60)
-    private String icon;
-    @Column(name = "priority", length = 11)
-    private Integer priority;
-    @Column(name = "status", length = 2)
+    private int priority;
+    @Column(length = 2)
     private String status;
     private Long createTime;
     private Long updateTime;
 
-    public String getModuleId() {
-        return moduleId;
+    public String getPrivilegeGroupId() {
+        return privilegeGroupId;
     }
 
-    public void setModuleId(String moduleId) {
-        this.moduleId = moduleId;
+    public void setPrivilegeGroupId(String privilegeGroupId) {
+        this.privilegeGroupId = privilegeGroupId;
     }
 
     public String getName() {
@@ -42,6 +38,14 @@ public class SysModule {
         this.name = name;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getCode() {
         return code;
     }
@@ -50,11 +54,11 @@ public class SysModule {
         this.code = code;
     }
 
-    public Integer getPriority() {
+    public int getPriority() {
         return priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(int priority) {
         this.priority = priority;
     }
 
@@ -80,21 +84,5 @@ public class SysModule {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
     }
 }
