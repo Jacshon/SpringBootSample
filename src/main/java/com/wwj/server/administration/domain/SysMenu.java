@@ -28,6 +28,8 @@ public class SysMenu {
 
     private Long updateTime;
 
+    private Integer priority;
+
     public String getMenuId() {
         return menuId;
     }
@@ -90,5 +92,13 @@ public class SysMenu {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 }

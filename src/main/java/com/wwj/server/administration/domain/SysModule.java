@@ -16,8 +16,6 @@ public class SysModule {
     @Column(name = "code", length = 32)
     private String code;
     @Column(length = 60)
-    private String state;
-    @Column(length = 60)
     private String icon;
     @Column(name = "priority", length = 11)
     private Integer priority;
@@ -80,14 +78,6 @@ public class SysModule {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public String getIcon() {
