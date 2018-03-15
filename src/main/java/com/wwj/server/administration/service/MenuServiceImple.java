@@ -2,6 +2,7 @@ package com.wwj.server.administration.service;
 
 import com.wwj.server.administration.dao.MenuDao;
 import com.wwj.server.administration.domain.SysMenu;
+import com.wwj.server.shared.util.UUIDTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import java.util.List;
 
 @Service
 public class MenuServiceImple implements MenuService {
-    private static Logger logger = LoggerFactory.getLogger(MenuServiceImple.class);
 
     @Autowired
     private MenuDao menuDao;
@@ -32,8 +32,10 @@ public class MenuServiceImple implements MenuService {
         return null;
     }
 
+    @Transactional
     @Override
     public SysMenu saveMenu(SysMenu sysMenu) {
+        sysMenu.setMenuId(UUIDTool.getUUID());
         return menuDao.saveAndFlush(sysMenu);
     }
 
