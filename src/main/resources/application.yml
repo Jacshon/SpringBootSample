@@ -9,8 +9,5 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-<<<<<<< HEAD
       ddl-auto: update
-=======
-      ddl-auto: update
->>>>>>> origin/master
+
