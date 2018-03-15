@@ -7,6 +7,8 @@ import java.util.List;
 public interface UserService {
     public List<SysUser> userList();
 
+    public SysUser findByUserName(String name);
+
     public SysUser userSave(SysUser sysUser);
 
     public SysUser getUserDetails(String userId) ;

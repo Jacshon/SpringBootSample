@@ -4,6 +4,7 @@ import com.wwj.server.administration.domain.SysUser;
 import com.wwj.server.administration.service.UserService;
 import com.wwj.server.common.domain.Response;
 import com.wwj.server.shared.URL;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = URL.SYS_USER_SEARCH, method = RequestMethod.POST)
+    @RequiresPermissions("userInfo:view")//权限管理;
     public Response userlist() {
         return Response.ok(userService.userList());
     }

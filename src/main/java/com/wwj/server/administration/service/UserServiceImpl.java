@@ -22,7 +22,12 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll();
     }
 
-//    @Transactional
+    @Override
+    public SysUser findByUserName(String loginId) {
+        return userDao.findByLoginId(loginId);
+    }
+
+    //    @Transactional
     @Override
     public SysUser userSave(SysUser sysUser) {
         return userDao.save(sysUser);

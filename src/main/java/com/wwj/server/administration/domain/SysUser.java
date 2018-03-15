@@ -108,4 +108,12 @@ public class SysUser {
     public void setRealName(String realName) {
         this.realName = realName;
     }
+    /**
+     * 密码盐.
+     * @return
+     */
+    public String getCredentialsSalt(){
+        return this.loginId;
+    }
+
 }
